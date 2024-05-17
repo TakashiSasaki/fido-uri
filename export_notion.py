@@ -1,9 +1,11 @@
 import os
 import requests
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-# 環境変数をロード
-load_dotenv()
+# .envファイルが存在する場合のみ読み込む
+dotenv_path = find_dotenv()
+if dotenv_path:
+    load_dotenv(dotenv_path)
 
 NOTION_API_KEY = os.getenv('NOTION_API_KEY')
 PAGE_ID = os.getenv('PAGE_ID')
