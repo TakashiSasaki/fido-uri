@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '12 3 * * *' # 毎日午前3時12分に実行
   workflow_dispatch:
+  push:
+    branches:
+      - notion
 
 jobs:
   export-and-commit:
@@ -51,4 +54,4 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add exported_document.md
           git commit -m 'Automated Notion export'
-          git push origin
+          git push origin notion
