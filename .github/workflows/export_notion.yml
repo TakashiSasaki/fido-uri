@@ -39,8 +39,8 @@ jobs:
           else
             echo "non_image_changes=false" >> $GITHUB_ENV
           fi
-          cat diff.txt
-          cat diff_filtered.txt
+          #cat diff.txt
+          #cat diff_filtered.txt
           cat diff_non_image.txt
           cat $GITHUB_ENV
 
