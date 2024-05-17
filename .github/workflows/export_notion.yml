@@ -24,7 +24,7 @@ jobs:
       - name: Run export script
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-          PAGE_ID: ${{ secrets.PAGE_ID }}
+          PAGE_ID: ${{ vars.PAGE_ID }}
         run: |
           python export_notion.py
 
