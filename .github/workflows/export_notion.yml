@@ -28,22 +28,23 @@ jobs:
         run: |
           python export_notion.py
 
-      - name: Check for image link changes
+      - name: Check for non-image link changes
         id: diff-check
         run: |
           git diff HEAD -- exported_document.md > diff.txt
-          grep -v '![image]' diff.txt > non_image_diff.txt
+          # Extract lines starting with + or -
+          grep '^[+-]' diff.txt > changes_only.txt
+          # Remove lines with +[!image] or -[!image]
+          grep -vE '^\+[ ]*\!\[image\]|\-[ ]*\!\[image\]' changes_only.txt > non_image_diff.txt
           if [ -s non_image_diff.txt ]; then
             echo "non_image_changes=true" >> $GITHUB_ENV
           else
             echo "non_image_changes=false" >> $GITHUB_ENV
           fi
-          echo $GITHUB_ENV
           cat $GITHUB_ENV
 
       - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: env.non_image_changes == 'true'
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
