@@ -41,6 +41,9 @@ jobs:
           else
             echo "non_image_changes=false" >> $GITHUB_ENV
           fi
+          cat diff.txt
+          cat changes_only.txt
+          cat non_image_diff.txt
           cat $GITHUB_ENV
 
       - name: Commit and push changes
