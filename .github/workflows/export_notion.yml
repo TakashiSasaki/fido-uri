@@ -38,6 +38,7 @@ jobs:
           else
             echo "non_image_changes=false" >> $GITHUB_ENV
           fi
+          echo $GITHUB_ENV
 
       - name: Commit and push changes
         env:
