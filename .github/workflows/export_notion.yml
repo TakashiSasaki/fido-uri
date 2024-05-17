@@ -36,4 +36,4 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add exported_document.md
           git commit -m 'Automated Notion export'
-          git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:master
