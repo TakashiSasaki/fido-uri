@@ -8,6 +8,9 @@ load_dotenv()
 NOTION_API_KEY = os.getenv('NOTION_API_KEY')
 PAGE_ID = os.getenv('PAGE_ID')
 
+print(f"NOTION_API_KEY: {NOTION_API_KEY}")
+print(f"PAGE_ID: {PAGE_ID}")
+
 headers = {
     "Authorization": f"Bearer {NOTION_API_KEY}",
     "Content-Type": "application/json",
@@ -17,6 +20,8 @@ headers = {
 def get_page_content(page_id):
     url = f"https://api.notion.com/v1/blocks/{page_id}/children"
     response = requests.get(url, headers=headers)
+    print(f"Response status code: {response.status_code}")
+    print(f"Response content: {response.content}")
     return response.json()
 
 def notion_to_markdown(content):
