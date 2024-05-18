@@ -23,10 +23,29 @@ dotenv_path = find_dotenv()
 if dotenv_path:
     load_dotenv(dotenv_path)
 
+def get_env_variable(var_name):
+    """
+    環境変数を取得する。存在しない場合は例外を投げる。
+
+    Args:
+        var_name (str): 環境変数名
+
+    Returns:
+        str: 環境変数の値
+    """
+    value = os.getenv(var_name)
+    if value is None:
+        raise EnvironmentError(f"Environment variable {var_name} not found.")
+    return value
+
 # 環境変数の取得
-NOTION_API_KEY = os.getenv('NOTION_API_KEY')
-PAGE_ID = os.getenv('PAGE_ID')
-FILE_NAME = os.getenv('FILE_NAME')
+try:
+    NOTION_API_KEY = get_env_variable('NOTION_API_KEY')
+    PAGE_ID = get_env_variable('PAGE_ID')
+    FILE_NAME = get_env_variable('FILE_NAME')
+except EnvironmentError as e:
+    print(e)
+    exit(1)
 
 # デバッグ出力
 print(f"NOTION_API_KEY: {NOTION_API_KEY}")
@@ -136,9 +155,8 @@ if content:
     markdown_content = notion_to_markdown(content)
 
     # 保存先のファイル名を取得し、Markdown内容を保存
-    file_name = FILE_NAME if FILE_NAME else "exported_document.md"
     try:
-        with open(file_name, "w", encoding="utf-8") as file:
+        with open(FILE_NAME, "w", encoding="utf-8") as file:
             file.write(markdown_content)
         print("Markdown export complete.")
     except IOError as e:
