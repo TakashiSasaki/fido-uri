@@ -16,11 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # 更新されたバージョン
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4 # 最新のバージョンを使用
-
+        uses: actions/setup-python@v4
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -34,27 +33,7 @@ jobs:
         run: |
           python export_notion.py
 
-      - name: Show exported file
-        env:
-          FILE_NAME: ${{ vars.FILE_NAME }}
-        run: |
-           cat $FILE_NAME
-
-      - name: Filter diff output
-        id: filter-diff
-        env:
-          FILE_NAME: ${{ vars.FILE_NAME }}
-        run: |
-          bash diff_non_image.sh $FILE_NAME
-          if [ -s diff_non_image.txt ]; then
-            echo "non_image_changes=true" >> $GITHUB_ENV
-          else
-            echo "non_image_changes=false" >> $GITHUB_ENV
-          fi
-          cat $GITHUB_ENV
-
       - name: Commit and push changes
-        if: env.non_image_changes == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
