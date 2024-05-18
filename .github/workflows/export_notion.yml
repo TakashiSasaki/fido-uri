@@ -63,4 +63,4 @@ jobs:
           git status
           git add exported_document.md
           git commit -m 'Automated Notion export'
-          git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:notion
+          git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${GITHUB_REF#refs/heads/}
