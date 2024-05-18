@@ -6,17 +6,17 @@
 
 Sign in with a passkeyを選択するとパスキーでの認証が始まる。
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/105fd01d-db5b-4c90-8c22-09bb5d59779d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T093546Z&X-Amz-Expires=3600&X-Amz-Signature=a74b4f74123490b11a8a1b0504fc4d257dfa5c79a71e6ebbda27972f846f2b4a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/105fd01d-db5b-4c90-8c22-09bb5d59779d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T103430Z&X-Amz-Expires=3600&X-Amz-Signature=96e91ce4d55e5f086e9a3e07bb3243ff2187afd1a9c343aa80efa40f3b6483cb&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 新しい認証器を登録するには「iPhone、iPad、またはAndroidデバイス」を選択する。
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/45b1958d-789f-495b-81e7-4544b31dcfa4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T093546Z&X-Amz-Expires=3600&X-Amz-Signature=113827c2aa9ecd59721fc33bcfeb064da5d05b60331f432eb058e301f12d61a1&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/45b1958d-789f-495b-81e7-4544b31dcfa4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T103430Z&X-Amz-Expires=3600&X-Amz-Signature=b5f7380cbebf1b0dcd137331ad244285203761848fcf6702fdfa81f8dce257a7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 QRコードが表示される。これがハイブリッドトランスポートである。
 
 つまりFIDO2で使われるCTAPの基本的なトランスポートは近接性を確認できるWi-Fi、USB、Bluetooth LEであるが、それと併用できる別のトランスポートも使用するのがハイブリッドトランスポートであり、その手段の一つとしてQRコードがある、ということである。
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/c6b1537b-a6ab-44d2-80c0-a42758166c29/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T093546Z&X-Amz-Expires=3600&X-Amz-Signature=96d625da41f6da99300f15c0addc4de23ee67d8bd91fae34edf99be9c8a3df4c&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/c6b1537b-a6ab-44d2-80c0-a42758166c29/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T103430Z&X-Amz-Expires=3600&X-Amz-Signature=54ad0994fab14b77a91cf74d56dbc1427a0c756c5b1597e75c29e8c0591de98c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 # FIDOスキームのURI
 
@@ -28,7 +28,7 @@ FIDO:/14451994279805094087858248861210613803171423051309413937929936889508187882
 
 FIDO:/ の部分が英数字モードでエンコードされ、その後数字モードでエンコードされることを想定している。これによりQRコードのサイズを小さくすることができる。
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/67a54c04-6d13-4849-8ba8-37d1d2938e99/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T093546Z&X-Amz-Expires=3600&X-Amz-Signature=22669eb3fc7baa210d129f9b2146c5e4904ba0f4f47715653f6af90f81e18b79&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/67a54c04-6d13-4849-8ba8-37d1d2938e99/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T103430Z&X-Amz-Expires=3600&X-Amz-Signature=c94c6b933adfc3e29566aa42ffe7ce5086f100441ceda43e66a4bef49bb845e9&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 # Bluetoothの必要性
 
@@ -36,7 +36,7 @@ PCでGithubを開いてスマートフォンなどローミング認証機によ
 
 このことからBluetoothによる近接性の確認が行われていることが確認できる。
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/c516ef43-599e-4129-af2e-4e1d4ed8f613/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T093546Z&X-Amz-Expires=3600&X-Amz-Signature=f0bfea80bed720050853d2d4b78f4e11a976a3b6dd5afe79b0c9bd15fd3df378&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74817d1-981d-4a9d-bf70-0ecc1d271f27/c516ef43-599e-4129-af2e-4e1d4ed8f613/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240518%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T103430Z&X-Amz-Expires=3600&X-Amz-Signature=cc9902ad6ddb91f88f5ecacc5908a6945deb9f296772a559ee1c6a238eeb0f6c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 # FIDOスキームURIのデコード
 
