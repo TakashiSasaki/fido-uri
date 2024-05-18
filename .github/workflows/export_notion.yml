@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '12 3 * * *' # 毎日午前3時12分に実行
   workflow_dispatch:
+    branches:
+      - notion
   push:
     branches:
       - notion
