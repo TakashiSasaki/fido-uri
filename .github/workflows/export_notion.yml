@@ -45,7 +45,7 @@ jobs:
         env:
           FILE_NAME: ${{ vars.FILE_NAME }}
         run: |
-          bash diff_non_image_sh $FILE_NAME
+          bash diff_non_image.sh $FILE_NAME
           if [ -s diff_non_image.txt ]; then
             echo "non_image_changes=true" >> $GITHUB_ENV
           else
