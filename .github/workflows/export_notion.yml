@@ -31,7 +31,7 @@ jobs:
           NOTION_PAGE_ID: ${{ vars.NOTION_PAGE_ID }}
           NOTION_MD_FILE_NAME: ${{ vars.NOTION_MD_FILE_NAME }}
         run: |
-          python export-notion-page.py
+          python export-notion-page/export-notion-page.py
 
       - name: Commit and push changes
         env:
