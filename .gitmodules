@@ -1,0 +1,3 @@
+[submodule "export-notion-page"]
+	path = export-notion-page
+	url = git@github.com:TakashiSasaki/export-notion-page.git
