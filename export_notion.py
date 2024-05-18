@@ -14,6 +14,8 @@ Notion APIを使用してページの内容を取得し、Markdown形式で保�
 
 import os
 import requests
+import tempfile
+import json
 from dotenv import load_dotenv, find_dotenv
 
 # .envファイルが存在する場合のみ読み込む
@@ -125,6 +127,12 @@ def notion_to_markdown(content):
 # Notionページ内容の取得
 content = get_page_content(PAGE_ID)
 if content:
+    # 一時ファイルにJSONデータを保存
+    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding='utf-8', suffix='.json') as temp_file:
+        json.dump(content, temp_file, ensure_ascii=False, indent=4)
+        temp_file_path = temp_file.name
+        print(f"JSON content saved to temporary file: {temp_file_path}")
+
     markdown_content = notion_to_markdown(content)
 
     # 保存先のファイル名を取得し、Markdown内容を保存
