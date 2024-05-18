@@ -37,24 +37,24 @@ jobs:
       - name: Filter diff output
         id: filter-diff
         run: |
-          set -e
-          git diff HEAD --unified=0 -- exported_document.md > diff.txt
+          #set -e
+          #git diff HEAD --unified=0 -- exported_document.md > diff.txt
           #echo -------- diff.txt --------
           #cat diff.txt
-          grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
-          echo -------- diff.txt --------
-          cat diff_filtered.txt
-          grep -vE '^[+-]!\\[image\\]' diff_filtered.txt > diff_non_image.txt
-          echo -------- diff_non_image.txt --------
-          cat diff_non_image.txt
-          if [ -s diff_non_image.txt ]; then
-            echo "non_image_changes=true"
-            echo "non_image_changes=true" >> $GITHUB_ENV
-          else
-            echo "non_image_changes=false"
-            echo "non_image_changes=false" >> $GITHUB_ENV
-          fi
-          cat $GITHUB_ENV
+          #grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
+          #echo -------- diff.txt --------
+          #cat diff_filtered.txt
+          #grep -vE '^[+-]!\\[image\\]' diff_filtered.txt > diff_non_image.txt
+          #echo -------- diff_non_image.txt --------
+          #cat diff_non_image.txt
+          #if [ -s diff_non_image.txt ]; then
+          #  echo "non_image_changes=true"
+          #  echo "non_image_changes=true" >> $GITHUB_ENV
+          #else
+          #  echo "non_image_changes=false"
+          #  echo "non_image_changes=false" >> $GITHUB_ENV
+          #fi
+          #cat $GITHUB_ENV
 
       - name: Commit and push changes
         if: env.non_image_changes == 'true'
