@@ -37,10 +37,10 @@ jobs:
       - name: Filter diff output
         id: filter-diff
         run: |
-          #set -e
-          #git diff HEAD --unified=0 -- exported_document.md > diff.txt
-          #echo -------- diff.txt --------
-          #cat diff.txt
+          set -e
+          git diff HEAD --unified=0 -- exported_document.md > diff.txt
+          echo -------- diff.txt --------
+          cat diff.txt
           #grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
           #echo -------- diff.txt --------
           #cat diff_filtered.txt
