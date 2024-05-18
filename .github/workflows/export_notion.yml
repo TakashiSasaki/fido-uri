@@ -52,7 +52,7 @@ jobs:
           grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
           #echo -------- diff.txt --------
           #cat diff_filtered.txt
-          grep -v -E '^[+-]..image.' diff_filtered.txt > diff_non_image.txt
+          #grep -v -E '^[+-]..image.' diff_filtered.txt > diff_non_image.txt
           #echo -------- diff_non_image.txt --------
           #cat diff_non_image.txt
           #if [ -s diff_non_image.txt ]; then
