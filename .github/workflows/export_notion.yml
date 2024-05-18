@@ -34,11 +34,17 @@ jobs:
         run: |
           python export_notion.py
 
+      - name: Show exported file
+        env:
+          FILE_NAME: ${{ vars.FILE_NAME }}
+        run: |
+           cat $FILE_NAME
+
       - name: Filter diff output
         id: filter-diff
         run: |
           set -e
-          git diff HEAD --unified=0 -- exported_document.md > diff.txt
+          git diff HEAD --unified=0 -- $FILE_NAME > diff.txt
           echo -------- diff.txt --------
           cat diff.txt
           #grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
