@@ -45,9 +45,9 @@ jobs:
         run: |
           set -e
           git diff HEAD --unified=0 -- $FILE_NAME > diff.txt
-          echo -------- diff.txt --------
-          cat diff.txt
-          #grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
+          #echo -------- diff.txt --------
+          #cat diff.txt
+          grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
           #echo -------- diff.txt --------
           #cat diff_filtered.txt
           #grep -vE '^[+-]!\\[image\\]' diff_filtered.txt > diff_non_image.txt
