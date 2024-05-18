@@ -51,4 +51,4 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add exported_document.md
           git commit -m 'Automated Notion export'
-          git push origin
+          git push origin notion
