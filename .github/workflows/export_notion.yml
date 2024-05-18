@@ -35,8 +35,8 @@ jobs:
         id: filter-diff
         run: |
           git diff HEAD --unified=0 -- exported_document.md > diff.txt
-          grep -E '^[+-][^+-]' diff.txt >diff_filtered.txt
-          grep -vE '^[+-]!\[image\]'  diff_filtered.txt  >diff_non_image.txt
+          grep -E '^[+-][^+-]' diff.txt > diff_filtered.txt
+          grep -vE '^[+-]!\[image\]' diff_filtered.txt > diff_non_image.txt
           if [ -s diff_non_image.txt ]; then
             echo "non_image_changes=true" >> $GITHUB_ENV
           else
@@ -49,9 +49,11 @@ jobs:
 
       - name: Commit and push changes
         if: env.non_image_changes == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add exported_document.md
           git commit -m 'Automated Notion export'
-          git push origin notion
+          git push https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:notion
